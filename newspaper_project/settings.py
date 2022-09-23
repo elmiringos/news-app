@@ -86,8 +86,13 @@ WSGI_APPLICATION = 'newspaper_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dfk9ms3df8o7hc',
+        'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'fdwohjqgyiewjm',
+        'PASSWORD': 'e4c4b1c235cd689007cb47c09986b848e614c119d462c51f8fd7d0d72df8f7a3'
+
     }
 }
 
