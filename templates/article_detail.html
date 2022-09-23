@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ article.title }}</h2>
+    <p>by {{ article.author }} | {{ article.date }}</p>
+    <p>{{ article.body }}</p>
+</div>
+{% if article.author == user %}
+<a href="{% url 'article_edit' article.pk %}">Edit</a> | 
+<a href="{% url 'article_delete' article.pk %}">Delete</a> |
+{% endif %}
+<br/>
+<hr>
+<h2>Comments:</h2>
+<br/>
+{% if not article.comments.all %}
+    No Comments yet...<a href="{% url 'add_comment' article.pk %}">
+    Add One</a>
+{% endif %}
+{% if article.comments.all %}
+    {% for comment in article.comments.all %}
+        <strong>
+            {{ comment.author }}
+        </strong>
+        <br/>
+        {{ comment.comment }}
+        <br/>
+        <br/>
+    {% endfor %}
+    <h3><a href="{% url 'add_comment' article.pk %}">Add a comment</a></h3>
+{% endif %}
+<hr>
+
+
+
+<p>Back to <a href="{% url 'article_list' %}">All Articles</a>. </p>
+{% endblock content %}
