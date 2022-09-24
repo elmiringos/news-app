@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-2q5@n$)cne7f#jhkf70-1(!e_vo37x56hsew=*7m1q+uy247ur'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,9 +37,11 @@ ALLOWED_HOSTS = ['news-app-ell.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    #local
     "articles",
     "users",
 
+    #3-rd party
     "crispy_forms",
 
     'django.contrib.admin',
@@ -90,8 +92,8 @@ DATABASES = {
         'NAME': 'dfk9ms3df8o7hc',
         'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
         'PORT': 5432,
-        'USER': 'fdwohjqgyiewjm',
-        'PASSWORD': 'e4c4b1c235cd689007cb47c09986b848e614c119d462c51f8fd7d0d72df8f7a3'
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD')
 
     }
 }
