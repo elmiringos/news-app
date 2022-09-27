@@ -2,6 +2,19 @@
 
 In this app users can create articles and comments. Authorization and authentication are also supported. 
 
+Will be able to use it on:
+
+    desktop
+    mobile (phone and tablet)
+
+It uses:
+
+    Python 3
+    Django
+    PostgreSQL
+    
+
+
 'pip install requirements.txt' - install all packages
 
 'python manage.py runserver' - run web-app localy
